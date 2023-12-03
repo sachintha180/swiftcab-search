@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>SwiftCab Search</title>
+</head>
+<body>
+    <header>
+        <p>Swift Cab Booking Service</p>
+    </header>
+    <section id="search">
+        <p class="section-title">Choose the pickup and/or dropoff location to search</p>
+        <div class="break"></div>
+        <select name="pickup-location" id="pickup-location">
+            <option value="null">Pickup Location</option>
+            {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+            {% endfor %}
+        </select>
+        <select name="dropoff-location" id="dropoff-location">
+            <option value="null">Dropoff Location</option>
+            {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+            {% endfor %}
+        </select>
+        <div class="break"></div>
+        <input type="button" name="search-btn" id="search-btn" class="primary-btn" value="Search">
+    </section>
+    <section id="error">
+        <p id="error-message"></p>
+    </section>
+    <section id="results">
+        <div id="bookings">
+            <p class="section-title">Matched Bookings</p>
+            <div id="booking-items"></div>
+        </div>
+        <div id="other">
+            <div id="booking">
+                <p class="section-title">Booking Info</p>
+                <div class="entity-details">
+                    <p id="booking-id">Booking ID: N/A</p>
+                    <p id="booking-time">Time: No Time</p>
+                    <p id="booking-distance">Distance: No Distance</p>
+                    <div id="booking-other">
+                        <p id="booking-eta">ETA: N/A</p>
+                        <p id="booking-pickups">Pickups: N/A</p>
+                        <p id="booking-dropoffs">Dropoffs: N/A</p>
+                    </div>
+                </div>
+            </div>
+            <div id="driver">
+                <p class="section-title">Driver Info</p>
+                <div class="entity-details">
+                    <p id="driver-licenseno">License No: N/A</p>
+                    <p id="driver-name">No Name</p>
+                    <p id="driver-email">No Email</p>
+                    <div id="driver-other">
+                        <p id="driver-mobileno">Mobile No: N/A</p>
+                        <p id="driver-dob">DOB: N/A</p>
+                        <p id="driver-rating">Rating: N/A</p>
+                    </div>
+                </div>
+            </div>
+            <div id="user">
+                <p class="section-title">User Info</p>
+                <div class="entity-details">
+                    <p id="user-nic">User NIC: N/A</p>
+                    <p id="user-name">No Username</p>
+                    <p id="user-email">No Email</p>
+                    <div id="user-other">
+                        <p id="user-dob">DOB: N/A</p>
+                        <p id="user-streak">Ride Streak: N/A</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

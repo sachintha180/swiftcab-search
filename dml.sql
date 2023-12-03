@@ -1,0 +1,3 @@
+USE SwiftDB;
+
+SELECT * FROM "USER";
