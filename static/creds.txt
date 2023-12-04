@@ -1,8 +1,0 @@
-MSSQL_USER = "SwiftCabApp"
-MSSQL_USERPASS = "67Syjg:D4^uS"
-
-MSSQL_DEV = "SwiftCabDev"
-MSSQL_DEVPASS = "s4G2*4P*vDQV"
-
-MSSQL_DB = "SwiftDB"
-
